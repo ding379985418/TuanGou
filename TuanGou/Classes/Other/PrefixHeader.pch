@@ -1,0 +1,29 @@
+//
+//  PrefixHeader.pch
+//  TuanGou
+//
+//  Created by simon on 16/3/26.
+//  Copyright © 2016年 simon. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+//日志输出优化
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+//常量配置文件
+#import "DXConst.h"
+
+///常见分类
+#import "DXCategory.h"
+
+///application简写
+#define DXApplication [UIApplication sharedApplication]
+///notificationCenter简写
+#define DXNotificationCenter [NSNotificationCenter defaultCenter]
+
+#endif /* PrefixHeader_pch */
