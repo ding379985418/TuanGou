@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xaC-H5-Qiu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--District Drop View Controller-->
+        <scene sceneID="7cC-VZ-z8N">
+            <objects>
+                <viewController id="xaC-H5-Qiu" customClass="DXDistrictDropViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Wn-8X-XnO"/>
+                        <viewControllerLayoutGuide type="bottom" id="PJL-1M-epR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8zn-Px-pEK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDE-ND-s1x" userLabel="NaviView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cell_rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-Ak-B12">
+                                        <rect key="frame" x="578" y="13.5" width="17" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="17" id="ALR-dg-7z6"/>
+                                            <constraint firstAttribute="height" constant="17" id="obZ-ZT-YXx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSK-UW-qJK">
+                                        <rect key="frame" x="0.0" y="7" width="600" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="切换城市" image="btn_changeCity">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" image="btn_changeCity_selected"/>
+                                        <connections>
+                                            <action selector="changCity:" destination="xaC-H5-Qiu" eventType="touchUpInside" id="BA4-vx-bzU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0V9-2W-aZp"/>
+                                    <constraint firstItem="aSK-UW-qJK" firstAttribute="leading" secondItem="mDE-ND-s1x" secondAttribute="leading" id="7V8-hz-efD"/>
+                                    <constraint firstItem="aSK-UW-qJK" firstAttribute="top" secondItem="mDE-ND-s1x" secondAttribute="top" constant="7" id="R7k-19-TxN"/>
+                                    <constraint firstAttribute="bottom" secondItem="aSK-UW-qJK" secondAttribute="bottom" constant="7" id="TKI-rd-UL5"/>
+                                    <constraint firstAttribute="trailing" secondItem="aSK-UW-qJK" secondAttribute="trailing" id="WF1-NU-ODn"/>
+                                    <constraint firstAttribute="trailing" secondItem="zYY-Ak-B12" secondAttribute="trailing" constant="5" id="hfs-YI-TAa"/>
+                                    <constraint firstItem="zYY-Ak-B12" firstAttribute="centerY" secondItem="mDE-ND-s1x" secondAttribute="centerY" id="mps-vL-adp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxy-1B-nQt" userLabel="PlaceView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.65098039220000004" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PJL-1M-epR" firstAttribute="top" secondItem="cxy-1B-nQt" secondAttribute="bottom" id="2eW-mb-4qG"/>
+                            <constraint firstAttribute="trailing" secondItem="mDE-ND-s1x" secondAttribute="trailing" id="A4x-Rn-jbd"/>
+                            <constraint firstItem="mDE-ND-s1x" firstAttribute="leading" secondItem="8zn-Px-pEK" secondAttribute="leading" id="P38-uQ-CjN"/>
+                            <constraint firstItem="cxy-1B-nQt" firstAttribute="top" secondItem="mDE-ND-s1x" secondAttribute="bottom" id="aCY-gj-NB5"/>
+                            <constraint firstItem="mDE-ND-s1x" firstAttribute="top" secondItem="8zn-Px-pEK" secondAttribute="top" id="flm-ba-iH8"/>
+                            <constraint firstAttribute="trailing" secondItem="cxy-1B-nQt" secondAttribute="trailing" id="gxH-Xk-nDg"/>
+                            <constraint firstItem="cxy-1B-nQt" firstAttribute="leading" secondItem="8zn-Px-pEK" secondAttribute="leading" id="vO9-S4-D9o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeCityButton" destination="aSK-UW-qJK" id="PlF-CR-lAk"/>
+                        <outlet property="placeHolderView" destination="cxy-1B-nQt" id="UBT-lB-bbb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FyA-nV-S3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="135"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_changeCity" width="30" height="30"/>
+        <image name="btn_changeCity_selected" width="30" height="30"/>
+        <image name="icon_cell_rightArrow" width="17" height="17"/>
+    </resources>
+</document>

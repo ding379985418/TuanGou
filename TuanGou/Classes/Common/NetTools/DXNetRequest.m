@@ -39,7 +39,7 @@
     callBack.onSuccess = ^(long status, NSString *responseString) {
         NSLog(@"onSuccess");
         if(responseString != nil) {
-            
+//             NSLog(@"%@",responseString);
             id result = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
             if (sucessBlock) {
                 sucessBlock(status,result);

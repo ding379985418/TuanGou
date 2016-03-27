@@ -15,15 +15,35 @@
 #define NSLog(...)
 #endif
 
+///application简写
+#define DXApplication [UIApplication sharedApplication]
+
+///notificationCenter简写
+#define DXNotificationCenter [NSNotificationCenter defaultCenter]
+
+///偏好设置简写
+#define DXUserDefaults [NSUserDefaults standardUserDefaults]
+///默认主题颜色
+#define KDefaultColor [UIColor colorWithR:35 G:177 B:157]
+
+//屏幕尺寸
+#define KScreenWith [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+#define KScreenSize [UIScreen mainScreen].bounds.size
+#define KScreenBounds [UIScreen mainScreen].bounds
+
 //常量配置文件
 #import "DXConst.h"
 
-///常见分类
+//常见分类
 #import "DXCategory.h"
 
-///application简写
-#define DXApplication [UIApplication sharedApplication]
-///notificationCenter简写
-#define DXNotificationCenter [NSNotificationCenter defaultCenter]
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
+//#import "MBProgressHUD+DP"
+
+
 
 #endif /* PrefixHeader_pch */

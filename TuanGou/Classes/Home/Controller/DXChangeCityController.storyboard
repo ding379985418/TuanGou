@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DyE-qf-KTq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Change City Controller-->
+        <scene sceneID="gyN-Iz-wTe">
+            <objects>
+                <viewController id="DyE-qf-KTq" customClass="DXChangeCityController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G2t-8Q-f6J"/>
+                        <viewControllerLayoutGuide type="bottom" id="WXi-El-GU8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cwZ-vw-LDf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="请输入城市名或拼音" backgroundImage="bg_login_textfield" scopeBarBackgroundImage="share_text_frame" translatesAutoresizingMaskIntoConstraints="NO" id="ZiD-RG-5fR">
+                                <rect key="frame" x="5" y="5" width="590" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DyE-qf-KTq" id="2Ag-bW-I2r"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lau-BW-7Ys">
+                                <rect key="frame" x="-5" y="52" width="605" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DyE-qf-KTq" id="sCW-Kw-FXr"/>
+                                    <outlet property="delegate" destination="DyE-qf-KTq" id="1rT-aJ-Rih"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lau-BW-7Ys" firstAttribute="top" secondItem="ZiD-RG-5fR" secondAttribute="bottom" constant="3" id="2lb-1m-FlD"/>
+                            <constraint firstAttribute="bottom" secondItem="lau-BW-7Ys" secondAttribute="bottom" constant="-32" id="3aq-Xk-8Xe"/>
+                            <constraint firstAttribute="trailing" secondItem="ZiD-RG-5fR" secondAttribute="trailing" constant="5" id="KoR-Qv-bVt"/>
+                            <constraint firstItem="ZiD-RG-5fR" firstAttribute="top" secondItem="cwZ-vw-LDf" secondAttribute="top" constant="5" id="Ucp-xR-Ilm"/>
+                            <constraint firstItem="ZiD-RG-5fR" firstAttribute="leading" secondItem="cwZ-vw-LDf" secondAttribute="leading" constant="5" id="dSU-jg-zzb"/>
+                            <constraint firstItem="lau-BW-7Ys" firstAttribute="top" secondItem="ZiD-RG-5fR" secondAttribute="bottom" constant="3" id="e4Y-fF-v5S"/>
+                            <constraint firstAttribute="trailing" secondItem="lau-BW-7Ys" secondAttribute="trailing" id="mar-NZ-caX"/>
+                            <constraint firstItem="lau-BW-7Ys" firstAttribute="leading" secondItem="cwZ-vw-LDf" secondAttribute="leading" constant="-5" id="oEM-xL-iRQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="serarBar" destination="ZiD-RG-5fR" id="9cp-CH-ZUq"/>
+                        <outlet property="tableView" destination="lau-BW-7Ys" id="c4B-dp-LdV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xch-Ge-72m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="-229"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+        <image name="share_text_frame" width="294" height="114"/>
+    </resources>
+</document>

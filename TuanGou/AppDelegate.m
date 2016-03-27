@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DXHomeViewController.h"
+#import "DXNaviVigationController.h"
+#import "DXChangeCityController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:KScreenBounds];
+    
+    DXHomeViewController *homeVc = [[DXHomeViewController alloc]init];
+    DXNaviVigationController *naVc = [[DXNaviVigationController alloc]initWithRootViewController:homeVc];
+    self.window.rootViewController = naVc;
+    
+//    self.window.rootViewController = [DXChangeCityController changeCityController];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
