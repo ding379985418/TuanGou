@@ -4,44 +4,50 @@
 <array>
 	<dict>
 		<key>label</key>
-		<string>默认排序</string>
-		<key>value</key>
-		<integer>1</integer>
+		<string>综合排序</string>
+		<key>vaule</key>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>label</key>
 		<string>价格最低</string>
-		<key>value</key>
-		<integer>2</integer>
+		<key>vaule</key>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>label</key>
 		<string>价格最高</string>
-		<key>value</key>
+		<key>vaule</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>label</key>
+		<string>折扣优先</string>
+		<key>vaule</key>
 		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>label</key>
-		<string>人气最高</string>
-		<key>value</key>
+		<string>销量优先</string>
+		<key>vaule</key>
 		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>label</key>
-		<string>最新发布</string>
-		<key>value</key>
+		<string>离我最近</string>
+		<key>vaule</key>
 		<integer>5</integer>
 	</dict>
 	<dict>
 		<key>label</key>
-		<string>即将结束</string>
-		<key>value</key>
+		<string>最新发布</string>
+		<key>vaule</key>
 		<integer>6</integer>
 	</dict>
 	<dict>
 		<key>label</key>
-		<string>离我最近</string>
-		<key>value</key>
+		<string>评分最高</string>
+		<key>vaule</key>
 		<integer>7</integer>
 	</dict>
 </array>

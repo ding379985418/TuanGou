@@ -17,6 +17,8 @@
 
 ///application简写
 #define DXApplication [UIApplication sharedApplication]
+///weakself简写
+#define DXWeakSelf __weak __typeof(self) weakSelf = self;
 
 ///notificationCenter简写
 #define DXNotificationCenter [NSNotificationCenter defaultCenter]
@@ -41,8 +43,9 @@
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "MBProgressHUD+DP.h"
 #import "Masonry.h"
-//#import "MBProgressHUD+DP"
+#import "DXNoDataView.h"
 
 
 

@@ -15,9 +15,10 @@
 @interface DXDistrictDropViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *changeCityButton;
 @property (weak, nonatomic) IBOutlet UIView *placeHolderView;
-
+///双页tabelView
 @property (nonatomic, strong) DXDropViewController *dropVc;
-
+///城市ID
+@property (nonatomic, strong) NSNumber *cityId;
 
 @end
 
@@ -27,14 +28,15 @@
 {
     
   DXDistrictDropViewController *vc = [[UIStoryboard storyboardWithName:@"DXDistrictDropViewController" bundle:nil] instantiateInitialViewController];
-    
-    
-   
-
-    
     return vc;
-
 }
+
+- (instancetype)initWithCityId:(NSNumber *)cityId{
+   self = [[UIStoryboard storyboardWithName:@"DXDistrictDropViewController" bundle:nil] instantiateInitialViewController];
+    self.cityId = cityId;
+    return self;
+}
+
 
 - (void)setCityId:(NSNumber *)cityId{
 
@@ -56,7 +58,6 @@
     [DXNotificationCenter addObserver:self selector:@selector(homeDistControllerNoticicaton:) name:KHomeDistControllerNoticicaton object:nil];
     self.dropVc.view.frame = self.placeHolderView.bounds;
     [self.placeHolderView addSubview:self.dropVc.view];
-    
     
 
 }

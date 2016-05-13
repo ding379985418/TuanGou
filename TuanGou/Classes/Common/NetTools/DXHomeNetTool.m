@@ -9,7 +9,10 @@
 #import "DXHomeNetTool.h"
 #import "DXDropCategoriesModel.h"
 #import "DXDropDistrictsModel.h"
+#import "DXHomeRequestModel.h"
+#import "DXDropNotificationModel.h"
 #import "DXCityModel.h"
+#import "DXNetRequest.h"
 @implementation DXHomeNetTool
 + (void)loadHomeCategoriesComplete:(void(^)())completeBlock
                             sucess:(void(^)(NSArray *result))sucessBlock
@@ -92,5 +95,85 @@
         }
     }];
 }
+
+
+///请求团单列表
+//+ (void)loadHomeDealsWithRequestModel:(DXHomeRequestModel *)requestMoel
+//                                 page:(NSNumber *)page
+//                             pageSize:(NSNumber *)pageSize
+//                             complete:(void(^)())completeBlock
+//                               sucess:(void(^)(NSArray *result))sucessBlock
+//                         failureBlock:(void (^)(NSString *errorStr))failureBlock
+//{
+//     NSString *urlStr = @"http://apis.baidu.com/baidunuomi/openapi/searchdeals";
+//    
+//    NSMutableDictionary *params = [[NSMutableDictionary alloc]initWithDictionary:@{}];
+//    if (requestMoel.cityModel.mas_id) {
+//        [params setObject:requestMoel.cityModel.mas_id forKey:@"city_id"];
+//    }
+//    if (requestMoel.catModel.mas_id) {
+//        [params setObject:requestMoel.catModel.mas_id forKey:@"cat_ids"];
+//    }
+//    if (requestMoel.catModel.sub_id) {
+//        [params setObject:requestMoel.catModel.sub_id forKey:@"subcat_ids"];
+//    }
+//    if (requestMoel.districtModel.mas_id) {
+//        [params setObject:requestMoel.districtModel.mas_id forKey:@"district_ids"];
+//    }
+//    if (requestMoel.districtModel.sub_id) {
+//        [params setObject:requestMoel.districtModel.sub_id forKey:@"bizarea_ids"];
+//    }
+//    if (requestMoel.sortModel.mas_id) {
+//        [params setObject:requestMoel.sortModel.mas_id forKey:@"sort"];
+//    }
+//    NSLog(@"params:%@",params);
+//    [DXNetRequest request:POST urlStr:urlStr params:params complete:^{
+//        if (completeBlock) {
+//            completeBlock();
+//        }
+//    } sucess:^(long status, id result) {
+//        if (sucessBlock) {
+//            sucessBlock(result[@"data"][@"deals"]);
+//        }
+//        
+//    } failure:^(long status, NSString *errorStr) {
+//
+//        if (failureBlock) {
+//            failureBlock(errorStr);
+//        }
+//    }];
+//
+//}
+
++ (void)loadHomeDealsWithParams:(NSDictionary *)params
+                             complete:(void(^)())completeBlock
+                               sucess:(void(^)(NSArray *result))sucessBlock
+                         failureBlock:(void (^)(NSString *errorStr))failureBlock
+{
+    NSString *urlStr = @"http://apis.baidu.com/baidunuomi/openapi/searchdeals";
+    
+    NSLog(@"params:%@",params);
+    [DXNetRequest request:GET urlStr:urlStr params:params complete:^{
+        if (completeBlock) {
+            completeBlock();
+        }
+    } sucess:^(long status, id result) {
+        if (sucessBlock) {
+            if (![result[@"data"] isKindOfClass:[NSNull class]]) {
+                sucessBlock(result[@"data"][@"deals"]);
+            }else{
+            sucessBlock(@[]);
+            }
+        }
+        
+    } failure:^(long status, NSString *errorStr) {
+        
+        if (failureBlock) {
+            failureBlock(errorStr);
+        }
+    }];
+    
+}
+
 
 @end

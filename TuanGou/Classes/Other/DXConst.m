@@ -19,6 +19,10 @@ NSString *const KHomeUserDistrictInfoKey = @"KHomeUserDistrictInfoKey";
 ///用城市信息
 NSString *const KHomeUserCityInfoKey = @"KHomeUserCityInfoKey";
 
+///屏幕将要旋转通知
+NSString *const KScreenWillChangeNoticicaton = @"KScreenWillChangeNoticicaton";
+///屏幕将要旋转通知字典Key
+NSString *const KScreenWillChangeNoticicatonSize = @"KScreenWillChangeNoticicatonSize";
 
 ///排序点击通知
 NSString *const KHomeSortControllerNoticicaton = @"KHomeSortControllerNoticicaton";
@@ -43,8 +47,10 @@ NSString *const KHomeChangeCityControllerNoticicatonInfo = @"KHomeChangeCityCont
 
 ///首页popView的Size
 const CGFloat KHomepopViewContentWith = 350;
-
-//const CGFloat KScreenHeight = ;
+///首页请求商品数量大小
+const NSInteger KHomePageSize = 20;
+///homeCellWith
+const CGFloat KHomeCollectionCellWith = 305;
 //
 //const CGFloat KScreenSize = ;
 //

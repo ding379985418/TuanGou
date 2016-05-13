@@ -21,6 +21,11 @@ extern NSString *const KHomeUserSortInfoKey;
 ///用城市信息
 extern NSString *const KHomeUserCityInfoKey;
 
+///屏幕将要旋转通知
+extern NSString *const KScreenWillChangeNoticicaton;
+///屏幕将要旋转通知字典Key
+extern NSString *const KScreenWillChangeNoticicatonSize;
+
 ///排序点击通知
 extern NSString *const KHomeSortControllerNoticicaton;
 ///排序点击通知字典Key
@@ -45,8 +50,9 @@ extern NSString *const KHomeChangeCityControllerNoticicatonInfo;
 extern const CGFloat KHomeNaviBarMapWith;
 ///首页popView的Size
 extern const CGFloat KHomepopViewContentWith;
-/////屏幕size
-//extern const CGSize KScreenSize;
-/////屏幕bounds
-//extern const CGRect KScreenBounds;
+///首页请求商品数量大小
+extern const NSInteger KHomePageSize;
+///homeCellWith
+extern const CGFloat KHomeCollectionCellWith;
+
 

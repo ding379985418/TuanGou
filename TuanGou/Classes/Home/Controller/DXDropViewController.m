@@ -57,11 +57,13 @@
 
 #pragma mark -setterMetod
 - (void)setLeftCategoriesArrayData:(NSArray *)leftCategoriesArrayData{
+    _leftCategoriesArrayData = @[];
     _leftCategoriesArrayData = leftCategoriesArrayData;
      [self.lefeTableView reloadData];
 }
 - (void)setLeftDistrictArrayData:(NSArray *)leftDistrictArrayData{
 
+    _leftDistrictArrayData = @[];
     _leftDistrictArrayData = leftDistrictArrayData;
      [self.lefeTableView reloadData];
 

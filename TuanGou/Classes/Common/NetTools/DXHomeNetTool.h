@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DXNetRequest.h"
+@class DXHomeRequestModel;
 @interface DXHomeNetTool : NSObject
 ///获取首页分类信息
 + (void)loadHomeCategoriesComplete:(void(^)())completeBlock
@@ -22,4 +23,10 @@
 + (void)loadHomeCitiesComplete:(void(^)())completeBlock
                         sucess:(void(^)(NSArray *result))sucessBlock
                   failureBlock:(void (^)(NSString *errorStr))failureBlock;
+
+///请求团单列表
++ (void)loadHomeDealsWithParams:(NSDictionary *)params
+                       complete:(void(^)())completeBlock
+                         sucess:(void(^)(NSArray *result))sucessBlock
+                   failureBlock:(void (^)(NSString *errorStr))failureBlock;
 @end

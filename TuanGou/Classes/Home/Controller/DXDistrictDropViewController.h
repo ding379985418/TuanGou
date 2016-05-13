@@ -9,7 +9,9 @@
 #import "DXBaseViewController.h"
 @class  DXCityModel;
 @interface DXDistrictDropViewController : DXBaseViewController
-@property (nonatomic, strong) NSNumber *cityId;
+
 + (instancetype)dropViewController;
+///初始化控制器
+- (instancetype)initWithCityId:(NSNumber *)cityId;
 
 @end
