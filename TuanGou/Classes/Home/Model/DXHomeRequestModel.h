@@ -17,4 +17,7 @@
 @property (nonatomic, strong) DXDropNotificationModel *sortModel;
 ///城市模型
 @property (nonatomic, strong) DXDropNotificationModel *cityModel;
+///关键字
+@property (nonatomic, strong) NSString *keyWord;
+
 @end

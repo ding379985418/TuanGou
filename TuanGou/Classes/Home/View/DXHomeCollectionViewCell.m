@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *saleNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descripLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *dealImageView;
+@property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
+@property (weak, nonatomic) IBOutlet UIButton *coverBtn;
 
 
 @end
@@ -38,9 +40,25 @@
     NSString *saleText = [NSString stringWithFormat:@"已售 %@",dealModel.sale_num];
     self.saleNumberLabel.text = saleText;
     [self.dealImageView sd_setImageWithURL:[NSURL URLWithString:dealModel.image] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
-
+    
+    if (dealModel.isEditing) {
+        self.coverBtn.alpha = 0.5;
+    }else{
+        self.coverBtn.alpha = 0.1;
+    }
+    self.selectedBtn.selected = dealModel.isSelected;
+    
 }
 - (IBAction)dealCellDidClick:(UIButton *)sender {
+    
+    if (self.dealModel.isEditing) {
+        self.dealModel.isSelected = !self.dealModel.isSelected;
+        self.dealModel = self.dealModel;
+        [DXNotificationCenter postNotificationName:KHomeCollectionCellClickNoticicaton object:nil userInfo:@{KHomeCollectionCellClickNoticicatonKey:self.dealModel}];
+        return;
+    }
+    [DXNotificationCenter postNotificationName:KHomeCollectionCellClickNoticicaton object:nil userInfo:@{KHomeCollectionCellClickNoticicatonKey:self.dealModel}];
+//    NSLog(@"KHomeCollectionCellClickNoticicaton:--%@",self.dealModel.title);
 }
 
 @end

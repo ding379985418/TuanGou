@@ -21,6 +21,11 @@ extern NSString *const KHomeUserSortInfoKey;
 ///用城市信息
 extern NSString *const KHomeUserCityInfoKey;
 
+///点击cell通知
+extern NSString *const KHomeCollectionCellClickNoticicaton;
+///点击通知字典Key
+extern NSString *const KHomeCollectionCellClickNoticicatonKey;
+
 ///屏幕将要旋转通知
 extern NSString *const KScreenWillChangeNoticicaton;
 ///屏幕将要旋转通知字典Key

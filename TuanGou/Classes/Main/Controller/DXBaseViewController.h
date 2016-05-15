@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DXBaseViewController : UIViewController
-
+///设置后退Item
+- (void)setBackItem;
 @end

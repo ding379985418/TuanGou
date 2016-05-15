@@ -18,4 +18,5 @@
 
     return @{@"descriptions":@"description"};
 }
+MJCodingImplementation
 @end

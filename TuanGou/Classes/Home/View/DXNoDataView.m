@@ -10,7 +10,8 @@
 
 @implementation DXNoDataView
 
-+ (void)ShowNoDataViewWithType:(DXNoDataViewType)type toView:(UIView *)view
+
++ (void)ShowNoDataViewWithType:(DXNoDataViewType)type toView:(UIView *)toview
 {
     NSString *imgeStr = @"";
     switch (type) {
@@ -39,9 +40,20 @@
             break;
     }
     
-    DXNoDataView *noDataView = [[DXNoDataView alloc]initWithImage:[UIImage imageNamed:imgeStr]];
-    [view addSubview:noDataView];
-    noDataView.center = view.center;
+   
+    BOOL hasNoDataView = NO;
+    for (UIView *subView in toview.subviews) {
+        if ([subView isKindOfClass:[DXNoDataView class]]) {
+            hasNoDataView = YES;
+            subView.center = toview.center;
+        }
+    }
+    if (hasNoDataView == NO) {
+         DXNoDataView *noDataView = [[DXNoDataView alloc]initWithImage:[UIImage imageNamed:imgeStr]];
+        [toview addSubview:noDataView];
+        noDataView.center = toview.center;
+    }
+
 }
 
 + (void)hiddenNoDataViewFromView:(UIView *)view{
@@ -52,9 +64,21 @@
         if ([subView isKindOfClass:self]) {
             subView.alpha = 0;
             [subView removeFromSuperview];
-//            subView = nil;
-
         }
     }
+}
+
+- (instancetype)initWithImage:(UIImage *)image{
+    self = [super initWithImage:image];
+    [DXNotificationCenter addObserver:self selector:@selector(orientChange:) name:KScreenWillChangeNoticicaton object:nil];
+    return self;
+}
+
+- (void)orientChange:(NSNotification *)noti{
+    NSDictionary *dic = noti.userInfo;
+    CGSize size = [dic[KScreenWillChangeNoticicatonSize] CGSizeValue];
+    NSLog(@"%@",NSStringFromCGSize(size));
+    self.centerX = size.width * 0.5;
+    self.centerY = size.height * 0.5;
 }
 @end

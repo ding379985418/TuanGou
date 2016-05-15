@@ -36,7 +36,8 @@ static NSString *collectionReuseIdentifier = @"collectionReuseIdentifier";
 - (void)orientChange:(NSNotification *)noti{
     NSDictionary *dic = noti.userInfo;
    CGSize size = [dic[KScreenWillChangeNoticicatonSize] CGSizeValue];
-    NSLog(@"%@",NSStringFromCGSize(size));
+//    NSLog(@"%@",NSStringFromCGSize(size));
+    self.size = size;
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
     NSInteger colNum = size.width == 1024?3:2;
     CGFloat inset = (size.width - colNum *KHomeCollectionCellWith )/(colNum + 1);
@@ -44,7 +45,6 @@ static NSString *collectionReuseIdentifier = @"collectionReuseIdentifier";
     layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     layout.minimumLineSpacing = inset;
     
-
 }
 #pragma mark -setter方法
 - (void)setDataArray:(NSArray *)dataArray{

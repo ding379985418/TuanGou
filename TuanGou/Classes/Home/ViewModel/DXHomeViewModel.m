@@ -81,6 +81,7 @@
     if (requestMoel.cityModel.mas_id) {
         [params setObject:requestMoel.cityModel.mas_id forKey:@"city_id"];
     }
+ 
     if (requestMoel.catModel.mas_id) {
         [params setObject:requestMoel.catModel.mas_id forKey:@"cat_ids"];
     }
@@ -95,6 +96,9 @@
     }
     if (requestMoel.sortModel.mas_id) {
         [params setObject:requestMoel.sortModel.mas_id forKey:@"sort"];
+    }
+    if (requestMoel.keyWord) {
+        [params setObject:requestMoel.keyWord forKey:@"keyword"];
     }
     
     [params setObject:page forKey:@"page"];

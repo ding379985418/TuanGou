@@ -39,4 +39,8 @@
 @property (nonatomic, copy) NSString *deal_url;
 ///商家
 @property (nonatomic, strong) NSArray *shops;
+///cell是否处在编辑状态
+@property (nonatomic, assign) BOOL isEditing;
+///是否被选中
+@property (nonatomic, assign) BOOL isSelected;
 @end

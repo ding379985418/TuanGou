@@ -10,6 +10,7 @@
 #import "DXHomeViewController.h"
 #import "DXNaviVigationController.h"
 #import "DXChangeCityController.h"
+#import "FMDBManager.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   FMDBManager *manager = [FMDBManager shareManager];
+    
     self.window = [[UIWindow alloc]initWithFrame:KScreenBounds];
     
     DXHomeViewController *homeVc = [[DXHomeViewController alloc]init];

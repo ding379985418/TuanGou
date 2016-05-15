@@ -7,6 +7,7 @@
 //
 
 #import "DXBaseViewController.h"
+#import "DXNaviVigationController.h"
 
 @interface DXBaseViewController ()
 
@@ -14,17 +15,29 @@
 
 @implementation DXBaseViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpUI];
+    [self setUpBaseUI];
     
 }
 
-- (void)setUpUI {
-    self.view.backgroundColor = [UIColor colorWithR:244 G:244 B:244];
+- (void)setUpBaseUI {
+    self.view.backgroundColor = KBGColor;
+    DXApplication.keyWindow.backgroundColor = KBGColor;
+    [self setBackItem];
    
 }
+- (void)setBackItem{
+    
+    UIBarButtonItem *backItem = [UIBarButtonItem barButtonItemWithName:@"返回" imageNameNor:@"icon_back" imageNameHig:@"icon_back_highlighted" addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+}
 
-
+- (void)back{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

@@ -13,13 +13,19 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="305" height="305"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_deal" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-kU-P7b">
+                        <rect key="frame" x="8" y="8" width="289" height="180"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="180" id="TR7-8L-uk3"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4B-VL-kfZ">
                         <rect key="frame" x="8" y="188" width="289" height="109"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv3-qF-2fK">
                                 <rect key="frame" x="0.0" y="8" width="289" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-6r-sPo" userLabel="currentPrice">
@@ -73,18 +79,17 @@
                             <constraint firstAttribute="trailing" secondItem="Jv3-qF-2fK" secondAttribute="trailing" id="y3Y-UX-QeM"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-5Z-3er" userLabel="coverBtn">
+                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-5Z-3er" userLabel="coverBtn">
                         <rect key="frame" x="0.0" y="0.0" width="305" height="305"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <action selector="dealCellDidClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NWD-sa-bZy"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_deal" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-kU-P7b">
-                        <rect key="frame" x="8" y="8" width="289" height="180"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="180" id="TR7-8L-uk3"/>
-                        </constraints>
-                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrL-QF-2CP">
+                        <rect key="frame" x="267" y="263" width="30" height="34"/>
+                        <state key="selected" image="ic_choosed"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -97,24 +102,29 @@
                 <constraint firstItem="vh7-5Z-3er" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="39R-xK-DL9"/>
                 <constraint firstAttribute="bottom" secondItem="A4B-VL-kfZ" secondAttribute="bottom" constant="8" id="E3V-Ee-gPI"/>
                 <constraint firstAttribute="trailing" secondItem="dNK-kU-P7b" secondAttribute="trailing" constant="8" id="MAr-O5-u2b"/>
+                <constraint firstAttribute="trailing" secondItem="JrL-QF-2CP" secondAttribute="trailing" constant="8" id="Mgj-Md-UoL"/>
                 <constraint firstItem="dNK-kU-P7b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="XXk-kF-Z8C"/>
                 <constraint firstAttribute="bottom" secondItem="vh7-5Z-3er" secondAttribute="bottom" id="fQi-h6-9vF"/>
                 <constraint firstItem="vh7-5Z-3er" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jWA-y6-SRq"/>
+                <constraint firstAttribute="bottom" secondItem="JrL-QF-2CP" secondAttribute="bottom" constant="8" id="n6G-EB-M5X"/>
                 <constraint firstAttribute="trailing" secondItem="A4B-VL-kfZ" secondAttribute="trailing" constant="8" id="whY-22-R7o"/>
             </constraints>
             <size key="customSize" width="292" height="235"/>
             <connections>
+                <outlet property="coverBtn" destination="vh7-5Z-3er" id="OxF-rv-Vah"/>
                 <outlet property="currentPriceLabel" destination="bPg-6r-sPo" id="gdn-Q1-TW3"/>
                 <outlet property="dealImageView" destination="dNK-kU-P7b" id="1tJ-zc-IjW"/>
                 <outlet property="descripLabel" destination="oQ5-4Y-QP8" id="SOW-rX-4rD"/>
                 <outlet property="orginalPriceLabel" destination="6Fs-cW-hOr" id="zRi-Jj-LaJ"/>
                 <outlet property="saleNumberLabel" destination="aV4-mr-FWn" id="gVh-bd-9Lj"/>
+                <outlet property="selectedBtn" destination="JrL-QF-2CP" id="LG7-ca-Qqt"/>
                 <outlet property="titleLabel" destination="Jv3-qF-2fK" id="553-tP-Z11"/>
             </connections>
-            <point key="canvasLocation" x="217.5" y="331.5"/>
+            <point key="canvasLocation" x="110.5" y="215.5"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic_choosed" width="26" height="26"/>
         <image name="placeholder_deal" width="273" height="172"/>
     </resources>
 </document>

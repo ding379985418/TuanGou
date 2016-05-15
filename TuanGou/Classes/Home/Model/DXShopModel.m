@@ -10,6 +10,6 @@
 
 @implementation DXShopModel
 
-
+MJCodingImplementation
 
 @end

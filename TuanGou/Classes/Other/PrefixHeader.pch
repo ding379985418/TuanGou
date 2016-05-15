@@ -15,6 +15,15 @@
 #define NSLog(...)
 #endif
 
+#define ToastMessage(string) [DXApplication.keyWindow makeToast:string duration:0.3 position:@"center"]
+
+///加载过程提示简写
+#define DXShowProgressingHUD [MBProgressHUD showMessage:@"正在加载..." toView:self.view]
+
+
+///隐藏 加载提示
+#define DXHiddenProgressingHUD [MBProgressHUD hideHUDForView:self.view]
+
 ///application简写
 #define DXApplication [UIApplication sharedApplication]
 ///weakself简写
@@ -27,6 +36,8 @@
 #define DXUserDefaults [NSUserDefaults standardUserDefaults]
 ///默认主题颜色
 #define KDefaultColor [UIColor colorWithR:35 G:177 B:157]
+///默认背景颜色
+#define KBGColor [UIColor colorWithR:244 G:244 B:244]
 
 //屏幕尺寸
 #define KScreenWith [UIScreen mainScreen].bounds.size.width
@@ -46,6 +57,7 @@
 #import "MBProgressHUD+DP.h"
 #import "Masonry.h"
 #import "DXNoDataView.h"
+#import "UIView+Toast.h"
 
 
 
